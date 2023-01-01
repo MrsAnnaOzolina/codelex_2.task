@@ -1,6 +1,938 @@
-body {
-  background-color: antiquewhite;
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-.always{
-  color: red;
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  width: 100vw;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5; 
+  background: #FAFAFA;
+}
+.main, .contactUs, .contactUs2, .checkout, .checkoutMob{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-top: 104px;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*___________________________________ANNAS CSS_____________________________________*/
+                        /*------------SWITCH--------------------*/
+.mode-switch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mode-switch-label{
+    width:110px;
+    height:50px;
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+    cursor: pointer;
+    
+    
+}
+.mode-switch-label:after {
+    content: "";
+    width:45px;
+    height: 45px;
+    position: absolute;
+    top:3px;
+    left:3px;
+    background: linear-gradient(180deg,#ffcc89,#FD7918);
+    border-radius: 45px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  }
+  .mode-switch-input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  .mode-switch-input:checked + .mode-switch-label {
+    background: #242424;
+  }
+  .mode-switch-input:checked + .mode-switch-label:after {
+    left:107px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg,#777,#3a3a3a);
+  }
+  .mode-switch-label, .mode-switch-label:after {
+    transition: 0.3s
+  }
+  /* .mode-switch-input:checked + .main-switch-label ~ p{
+    color:red; 
+  }  NESTRADA */
+
+/*----------------------MAIN CSS------------------*/
+p{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #130F1C;
+    margin-top: 16px;
+}
+h1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    color:#130F1C;
+    margin-top: 32px;
+    margin-left: 24px;
+    color: #130F1C;
+    
+}
+h2{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    margin-left: 32px;
+    margin-top: 32px;
+}
+.main-inputtext:hover{
+    background-color: #eddede; 
+    transition: all .3s ease-in-out;
+
+}
+.main-inputtext2:hover{
+    background-color: #eddede;
+    transition: all .3s ease-in-out;
+
+}
+.main-inputtext{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #BAB9BD;
+    background: #FAFAFA;
+    border-radius: 5px;
+    height: 48px;
+    border:none;
+    padding-left: 12px;
+    margin-top: 4px;
+}
+
+.main-inputtext2{
+    color: rgba(24, 39, 58, 0.94);
+    background: #FAFAFA;
+    border-radius: 5px;
+    width: 364px;
+    height: 48px;
+    border:none;
+    margin-left: 32px;
+    padding-left: 12px;
+    margin-top: 4px;
+   
+}  
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 16px;
+    
+  }
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    bottom: 2.5px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #FD7918;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #FD7918;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(12px);
+    -ms-transform: translateX(12px);
+    transform: translateX(12px);
+  }
+  .main-subscribetext{
+    position: absolute; 
+    width: 125px;
+    margin-left: 28px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #484848;
+    margin-top: -2px;
+  }
+  .main-button{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    color: #FFFFFF;
+
+    background: #651FFF;
+    border-radius: 5px;
+    height: 48px;
+    border: none;
+  }
+
+  .main-button:hover {
+    background: #3f07ba;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+.main-forgotPS{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #651FFF;
+    margin-top:32px; 
+    margin-bottom: 21px;
+}
+.main-forgotPS:hover{
+    color: #484848;
+    
+}
+.main-orContinue{
+    margin-top: 21px;
+    margin-bottom: 16px;
+    color: #5A5761;
+  }
+  .main-icons{
+    border: 1px solid #ECECEE;
+    border-radius: 5px;
+    height: 48px;
+}
+.main-icons:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.main-icons1:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.main-iconin:hover{
+    transform: scale(1.5);
+}     
+.main-icons1{
+    border: 1px solid #ECECEE;
+    border-radius: 5px;
+    height: 48px;
+}
+
+.contactUs-box{
+    background: #FFFFFF;
+    box-shadow: 40px 40px 60px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.contactUs-inputtext{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    background: #FAFAFA;
+    border-radius: 5px;
+    border: none;
+    padding-left: 12px;
+    margin-top: 4px;
+}
+
+.contactUs-inputtext::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+.contactUs-inputtext2{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    background: #FAFAFA;
+    border-radius: 5px;
+    border: none;
+    padding-left: 12px;
+    margin-top: 4px;
+}
+.contactUs-divCheckbox{
+    height: 32px;
+}
+.contactUs-checkbox{
+background: #FD7918;
+border-radius: 4px;
+}
+.contactUs-newCheckbox{
+    display: block;
+  position: relative;
+  margin-left: 35px;
+ 
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.contactUs-checkbox{
+    position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.contactUs-checkmark{
+    position: absolute;
+    margin-top: 8px;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 4px;
+    
+}
+.contactUs-checkmark:hover{
+    background-color: #ccc;
+}
+.contactUs-checkbox:checked ~ .contactUs-checkmark {
+    background-color: #FD7918;
+}
+.contactUs-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  .contactUs-checkbox:checked ~ .contactUs-checkmark:after {
+    display: block;
+  }
+  .contactUs-newCheckbox .contactUs-checkmark:after {
+    left: 6px;
+    top: 0px;
+    width: 8px;
+    height: 15px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+.contactUs-subscribetext{
+ margin-left: 25px;
+ font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+color: #99969E;
+}
+.contactUs-message{
+    margin-top: 29px;
+    font-size: 12px
+    
+}
+.contactUs-typeMessage{
+    background: #F3F3F5;
+    border-radius: 5px;
+    resize: none;
+    border: none;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 32px;
+    margin-top: 4px;
+ 
+   
+    width: 601px;
+    height: 152px;
+
+}
+.contactUs-button{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+
+    background: #651FFF;
+    border-radius: 5px;
+    height: 48px;
+    border: none;
+    margin-top: 32px;
+
+}
+.contactUs-newCheckbox{
+    width: 170px;
+}
+
+.contactUs2-inputtext{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    background: #FAFAFA;
+    border-radius: 5px;
+    border: none;
+    padding-left: 12px;
+    margin-top: 4px;
+    margin-left: 32px;
+}
+.contactUs2-inputtext2{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    background: #FAFAFA;
+    border-radius: 5px;
+    border: none;
+    padding-left: 12px;
+    margin-top: 4px;
+}
+.contactUs2-pleceholderText{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    background: #FAFAFA;
+    border-radius: 5px;
+    border: none;
+    padding-left: 12px;
+    margin-top: 4px;
+    margin-left: 32px;
+}
+.contactUs2-typeMessage{
+    background: #F3F3F5;
+    border-radius: 5px;
+   
+    border: none;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 32px;
+    margin-top: 4px;
+    
+}
+.contactUs2-message{
+    margin-top:16px ;
+}
+.checkout-box{
+    background: #FFFFFF;
+    box-shadow: 40px 40px 60px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.chechout-details{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #130F1C;
+    line-height: 1.0;
+    margin-left: 0px;
+    
+
+}
+.chechout-details1{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #130F1C;
+    line-height: 1.0;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+.chechoutMob-details{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #130F1C;
+    line-height: 1.0;
+    margin-left: 0px;
+    
+
+}
+.chechoutMob-details1, .chechoutMob-details2, .chechoutMob-details3, .chechoutMob-details4{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #130F1C;
+    line-height: 1.0;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+
+
+
+/*------------------------MEDIA COM-------------------------*/
+@media (min-width:551px) {
+p{
+    margin-left: 32px;
+}
+.main-box{
+    background: #FFFFFF;
+    box-shadow: 40px 40px 60px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 428px;
+    height: 550px;
+}
+.main-allDeatils{
+    margin-top:16px;
+}
+.main-inputtext{
+    width: 364px;
+    margin-left: 32px;
+}
+.main-inputtext2{
+    width: 364px;
+    margin-left: 32px;
+}  
+.switch {
+    margin-left: 32px;
+    margin-top: 24px;
+  }
+.main-button{
+    width: 364px;
+    margin-top:20px;
+    margin-left: 32px;
+  }
+
+.main-icons{
+    width: 174px;
+    margin-left: 32px;
+}
+.main-icons1{
+    width: 174px;
+}
+.main-iconin{
+    margin-top: 12px;
+}
+
+}
+/*-------------MEDIA COM2-----------------------*/
+@media (min-width:873px){
+    .contactUs-box{
+        width: 665px;
+        height: 644px;
+    }
+    .contactUs-inputtext, .contactUs-inputtext2 {
+        width: 292.5px;
+        height: 48px;
+    }
+    .contactUs-inputtext{
+        margin-left: 32px;
+    }
+.contactUs-newCheckbox{
+    margin-top: 39px;
+}
+
+.contactUs-typeMessage{
+    width: 601px;
+    height: 152px;
+}
+.contactUs-button{
+    width: 141px; 
+}
+.contctUs-p2{
+    margin-left: 0px;
+}
+.contactUs2-box{
+    width: 665px;
+    height: 644px;
+
+}
+.col-xs-4{
+    width: 216px;
+    height: 604px;
+}
+.col-xs-8{
+    width: 449px;
+    height: 604px;
+}
+.contactUs2-firstColumn{
+    background: #651FFF;
+    box-shadow: 40px 40px 60px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 0px 0px 10px;
+}
+.contactUs2-secondColumn{
+    background: #FFFFFF;
+    box-shadow: 40px 40px 60px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 10px 10px 0px;
+}
+.contactUs2-contactUs{
+    width: 216px;
+    color: #FFFFFF;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 32px;
+    margin-left: 16px;
+}
+
+.contactUs2-titletext{
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-left: 0px;
+
+}
+.contactUs2-firstColumn :last-child{
+    margin-top: 9px;
+}
+.contactUs2-firstColumn :last-child{
+    margin-top: 9px;
+}
+.contactUs2-inputtext, .contactUs2-inputtext2{
+    width: 192.5px;
+height: 48px;   
+}
+.contactUs2-secondColumnsize{
+    width: 401px;
+}
+.contactUs2-pleceholderText{
+    width: 401px;
+    height: 48px;
+}
+.contactUs2-secondColumnSecondRow{
+    margin-top: 32px;
+}
+.contactUs2-secondColumnThirdRow{
+    margin-top: 16px;
+}
+.contctUs2-p2{
+margin-left: 0px;
+}
+.contactUs2-typeMessage{
+    width: 401px;
+    height: 84px;
+}
+.checkout-box{
+    width: 665px;
+height: 508px;
+}
+.checkout-firstaddress{
+    margin-left: 88px;
+}
+.checkout-deliveryDetails{
+    margin-left: 0px;
+}
+.checkout-card, .chechout-cardnumber, .checkout-cvc{
+    background: #FAFAFA;
+border-radius: 5px;
+border:none;
+}
+.checkout-card{
+    width: 138px;
+    height: 48px;
+    margin-left: 8px;
+
+}
+.chechout-cardnumber{
+    width: 309px;
+    height: 48px;
+    margin-left: 32px;
+}
+.checkout-cvc{
+    width: 138px;
+    height: 48px;
+    margin-left: -16px;
+}
+.checkout-cardtext{
+margin-left: 10px;
+}
+.checkout-cvctext{
+margin-left: -16px;
+}
+.checkout-continue{
+    margin-right: 32px;
+}
+.checkout-shipping{
+    margin-left:-12px ;
+}
+.checkoutMob{
+    display: none;
+}
+}
+/*-------------------------MEDIA PHONE----------------------------------*/
+@media (max-width:550px){
+    p{
+        margin-left: 16px;
+    }
+    .main-box{
+        background: #FFFFFF;
+        box-shadow: 40px 40px 60px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 343px;
+        height: 509px;
+       
+    }
+    .main-inputtext{
+        width: 311px;
+        margin-left: 16px;    
+    }
+    .main-inputtext2{
+        width: 311px;
+        margin-left: 16px;
+    }
+    .switch {
+        margin-left: 16px;
+        margin-top: 17px;
+      }
+      .main-button{
+        width: 311px;
+        margin-top: 16px;
+        margin-left: 16px;
+      }
+.main-line{
+    width: 311px; 
+}
+.main-icons{
+    width: 147.5px;
+    margin-left: 16px;
+}
+.main-icons1{
+    width: 147.5px;
+}
+.main-iconin{
+    margin-top: 12px;
+}
+.contctUs-p{
+    margin-left: 32px;
+}
+.contctUs-p2{
+    margin-left: 32px;
+}
+.contactUs-message{
+    margin-left: 32px;
+}
+.contctUs2-p2{
+    margin-left: 0px;
+}
+}
+/*-------------------------MEDIA PHONE2------------------------------*/
+@media (max-width:872px){
+    .contactUs-break{
+        flex-basis: 100%;
+        width:0px ;
+    }
+    .contactUs-box{
+        width: 343px;
+        height: 808px;
+    }
+    .contactUs-inputtext, .contactUs-inputtext2{
+        width: 279px;
+        height: 48px;
+        margin-left: 32px;
+    }
+    .contactUs-newCheckbox{
+        margin-top: 25px;
+    }
+    .contactUs-typeMessage{
+        width: 279px;
+        height: 152px;
+    }
+    .contactUs-button{
+        width: 279px;
+    }
+
+    .contactUs2-inputtext, .contactUs2-inputtext2{
+        width: 279px;
+        height: 48px; 
+    }
+    .contactUs2-secondColumnsize{
+        width: 279px;
+    }
+    .contactUs2-pleceholderText{
+        width: 279px;
+        height: 48px;
+    }
+.contactUs2-firstColumn{
+    display: none;
+}
+
+.contactUs2-secondColumn{
+    background: #FFFFFF;
+    box-shadow: 40px 40px 60px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 343px;
+    height: 848px;
+}
+.contactUs2-inputtext2{
+    margin-left: 32px;
+}
+.contactUs2-typeMessage{
+    width: 279px;
+    height: 152px;
+    resize: none;
+}
+.checkout-box{
+    width: 343px;
+    height: 710px;
+}
+.checkout{
+    display: none;
+}
+.checkoutMob-box{
+    width: 343px;
+    height: 710px;
+    background: #FFFFFF;
+    box-shadow: 40px 40px 60px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.checkoutMob-yourOrder{
+    margin-left: 16px;
+}
+.chechoutMob-Eggshell{
+    margin-left: 76px;
+}
+.chechoutMob-details4{
+    margin-left: 76px;
+}
+.chechoutMob-details2, .chechoutMob-details3 {
+    margin-left: 16px;
+}
+.checkoutMob-line{
+    margin-top: 10px;
+}
+.checkoutMob-checkout{
+ margin-left: 16px;
+}
+.checkoutMob-deliveryDetails{
+    margin-left: 16px;
+}
+.checkoutMob-adam{
+margin-left: 16px;
+}
+.checkoutMob-shipping{
+    margin-right: 16px;
+}
+.chechoutMobp-payment{
+    margin-left: 16px;
+}
+
+.checkoutMob-card, .chechoutMob-cardnumber, .checkoutMob-cvc{
+    background: #FAFAFA;
+border-radius: 5px;
+border:none;
+height: 48px;
+}
+.checkoutMob-card{
+    width: 151px;
+    margin-left: 16px;
+}
+.chechoutMob-cardnumber{
+    width: 311px;
+   margin-left: 16px;
+ 
+}
+.checkoutMob-cvc{
+    width: 151px;
+}
+.checkoutMob-cvctext{
+ margin-left: 0;
+}
+.checkoutMob-cardnumbertext{
+    margin-left: 16px;
+}
+}
+.checkoutMob-cardtext{
+    margin-left: 16px;
 }
